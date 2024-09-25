@@ -1,0 +1,485 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+a{
+    text-decoration: none;
+}
+
+/* Navbar container and layout */
+.navbar-container {
+    padding: 30px 0;
+    font-weight: 500;
+}
+
+.navbar {
+    max-width: 1200px;
+    width: 90%;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+
+.nav-item {
+    list-style: none;
+    display: inline-block;
+    flex-direction: column;
+    align-items: center;
+    padding: 0 10px;
+}
+
+.nav-item hr {
+    width: 0%;
+    height: 1.5px;
+    /* background-color: #4A5568;  */
+    border: none;
+    transition: .3s ease-in-out;
+}
+
+.nav-item:hover hr{
+    width: 100%;
+    background-color: #4A5568; 
+}
+
+.auth-cart-links {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+}
+
+.dropdown-group {
+    position: relative;
+}
+
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    right: 0;
+    padding-top: 16px;
+}
+
+.dropdown-group:hover .dropdown-menu {
+    display: block;
+}
+
+.dropdown-links {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 150px;
+    padding: 10px;
+    background-color: #E2E8F0; 
+    color: #4A5568; 
+    border-radius: 8px;
+}
+
+.dropdown-links a:hover {
+    color: #000;
+}
+
+
+.cart-link {
+    position: relative;
+}
+
+.cart-count {
+    position: absolute;
+    right: -10px;
+    bottom: 10px;
+    width: 16px;
+    height: 16px;
+    background-color: black;
+    color: white;
+    border-radius: 50%;
+    font-size: 8px;
+    text-align: center;
+    line-height: 16px;
+}
+
+#fas-bars, #closeIcon {
+    font-size: 30px;
+    cursor: pointer;
+    display: none;
+}
+
+@media only screen and (max-width: 768px) {
+
+    nav ul {
+        background: #030712 ;
+        /* backdrop-filter: blur(30px); */
+        position: fixed;
+        top: 0;
+        height: 100%;
+        right: -300px;
+        width: 200px;
+        padding-top: 50px;
+        z-index: 2;
+        transition: .3s ease-in-out;
+    }
+
+    nav ul li {
+        display: block;
+        color: #fff;
+        margin: 25px;
+    }
+    
+
+    #fas-bars, #closeIcon {
+        display: block;
+        /* position: absolute; */
+        top: 25px;
+        right: 25px;
+        cursor: pointer;
+    }
+
+    #closeIcon {
+        position: absolute;
+        left: 20px;
+        color: #fff;
+        top: 2px;
+    }
+
+    .btn {
+        left: 100px;
+        position: absolute;
+    }
+    .logo {
+        font-size: 19px;
+    }
+} 
+
+
+/* hero */
+
+.hero {
+    display: flex;
+    flex-direction: column; 
+    justify-content: center;
+    border: 1px solid #e0e0e0;
+    max-width: 90vw;
+    margin: 0 auto;
+    align-items: center; 
+}
+
+.hero-text {
+    flex: 1;
+    padding: 2.5rem;
+    text-align: left; 
+}
+
+.hero-text.sm {
+    padding: 0;
+}
+
+.hero .text-content {
+    color: #414141;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.hero .line {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.hero .line p:first-child {
+    width: 2rem;
+    height: 2px;
+    background-color: #414141;
+}
+
+.hero .line p:nth-child(2) {
+    font-weight: 500;
+    font-size: 0.875rem;
+}
+
+.hero .heading {
+    font-size: 1.875rem; 
+    padding: 1rem 0;
+    line-height: 1.5;
+}
+
+.hero .subheading {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.hero .subheading p:first-child {
+    font-weight: 600;
+    font-size: 0.875rem;
+}
+
+.hero .subheading p:nth-child(2) {
+    width: 2rem;
+    height: 1px;
+    background-color: #141414;
+}
+
+.hero .hero-image {
+    width: 50%;
+    max-height: 500px;
+    object-fit: cover;
+}
+
+@media (min-width: 640px) {
+    .hero {
+        flex-direction: row;
+    }
+
+    .hero-text {
+        padding: 0;
+    }
+}
+
+@media (min-width: 768px) {
+    .hero .line p:first-child {
+        width: 2.75rem;
+    }
+
+    .hero .line p:nth-child(2),
+    .hero .subheading p:first-child {
+        font-size: 1rem;
+    }
+
+    .hero .heading {
+        font-size: 3rem;
+    }
+
+    .hero .subheading p:first-child {
+        font-size: 1rem;
+    }
+}
+
+
+/* product container */
+
+.container {
+    margin-top: 2.5rem;
+}
+
+.header {
+    text-align: center;
+    padding: 2rem 0; 
+    font-size: 1.875rem;
+}
+
+.header h2 {
+    font-size: 1.875rem; 
+    margin: 0;
+}
+
+.header p {
+    width: 75%; 
+    margin: 0 auto;
+    font-size: 0.875rem; 
+    color: #4A5568; 
+}
+
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+    margin: 0 auto;
+    max-width: 90vw;
+}
+.product-item img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+}
+
+
+.product-item {
+    position: relative;
+    text-decoration: none;
+    color: #4A5568; 
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px, rgb(209, 213, 219) 0px 0px 0px 1px inset;
+    border-radius: 8px;
+    transition: background-color 0.3s;
+    max-height: 400px;
+}
+
+.product-info {
+    padding: 1rem 1.5rem;
+    background: #fff;
+    transition: background-color 0.3s;
+    flex-grow: 1;
+}
+
+
+.product-item .product-info:hover {
+    background-color: #f7fafc;
+}
+
+.product-item .product-info h3 {
+    font-size: 0.875rem;
+    font-weight: 500; 
+    margin: 0;
+}
+
+.product-item .product-info p {
+    color: #6B7280;
+    font-size: 0.875rem;
+}
+
+/* shopping-banner */
+
+.shopping-banner {
+    max-width: 90vw;
+    margin: 50px auto;
+    background: #faece1;
+    padding: 30px;
+    border-radius: 10px;
+}
+
+.shopping-banner-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    max-width: 900px;
+    margin: auto;
+}
+
+.shopping-banner-text {
+    display: flex;
+    flex-direction: column;
+    max-width: 400px;
+}
+
+.shopping-banner-text strong {
+    color: #ff805d;
+    text-transform: uppercase;
+    letter-spacing: 10px;
+    font-weight: 500;
+}
+
+.shopping-banner-text h3 {
+    font-size: 1.875rem;
+    color: #181818;
+}
+
+.shopping-banner-text p {
+    /* font-size: 0.875rem; */
+    color: #3f3f3f;
+    margin: 10px 0;
+}
+
+.shopping-banner-text a {
+    color: #ffffff;
+    background-color: #181818;
+    max-width: 160px;
+    width: 100%;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.shopping-banner-img {
+    height: 300px;
+    display: flex;
+    justify-content: center;
+}
+
+.shopping-banner-img img {
+    width: 100%;
+    object-fit: contain;
+    object-position: center;
+}
+
+@media (max-width: 780px) {
+    .shopping-banner-container {
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .shopping-banner-img img {
+        width: 100%;
+    }
+}
+
+/* SUBSCRIBE */
+
+.subscription-section {
+    max-width: 90vw;
+    margin: 50px auto;
+    text-align: center;
+}
+
+.subscription-section .heading {
+    font-size: 1.5rem; /* Equivalent to text-2xl */
+    font-weight: 500; /* Equivalent to font-medium */
+    color: #2D3748; /* Equivalent to text-gray-800 */
+}
+
+.subscription-section .subtext {
+    color: #A0AEC0; /* Equivalent to text-gray-400 */
+    margin-top: 0.75rem; /* Equivalent to mt-3 */
+}
+.subscription-section form {
+    max-width: 50%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin: 1.5rem auto;
+    padding-left: 0.75rem;
+    border: 1px solid #E2E8F0; 
+}
+
+.subscription-section form input[type="email"] {
+    width: 100%;
+    outline: none; /* Equivalent to outline-none */
+    padding: 0.5rem; /* Add some padding for a better look */
+    flex-grow: 1; /* Equivalent to sm:flex-1 */
+}
+.subscription-section button {
+    background-color: #000; /* Equivalent to bg-black */
+    color: #FFF; 
+    font-size: 0.75rem; 
+    padding: 1rem 1.5rem; 
+    cursor: pointer;
+    border: none; 
+}
+
+@media (min-width: 640px) {
+    .subscription-section form {
+        width: 50%;
+    }
+}
+
+@media (max-width: 640px) {
+    .subscription-section form {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .subscription-section form input {
+        width: 100%;
+    }
+}
